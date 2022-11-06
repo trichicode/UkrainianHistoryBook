@@ -1,0 +1,43 @@
+@import "./constants/colors.scss";
+
+@font-face {
+    font-family: "e-Ukraine-ultra-light";
+    src: url("./../public/assets/fonts/e-Ukraine-UltraLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-thin";
+    src: url("./../public/assets/fonts/e-Ukraine-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-regular";
+    src: url("./../public/assets/fonts/e-Ukraine-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-medium";
+    src: url("./../public/assets/fonts/e-Ukraine-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-light";
+    src: url("./../public/assets/fonts/e-Ukraine-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-bold";
+    src: url("./../public/assets/fonts/e-Ukraine-Bold.otf") format("opentype");
+}
+
+html {
+  background-color: $darkGray;
+  scroll-behavior: smooth;
+  font-family: "e-Ukraine-regular";
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}

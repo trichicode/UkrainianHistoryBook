@@ -1,0 +1,28 @@
+@import "./../../constants/colors.scss";
+.wrapper {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+  position: relative;
+}
+
+.wrapper__img {
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+  }
+}
+
+.wrapper__content {
+  position: absolute;
+  bottom: 100px;
+  background-color: $lightGray;
+}
