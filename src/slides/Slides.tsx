@@ -63,7 +63,7 @@ const Slider = () => {
   return (
     <div className="wrapper-pages">
 
-        <button onClick={back}><img src="./../../assets/imgs/arrow.svg"/></button>
+      <button onClick={back}><img src="../../imgs/arrow.svg"/></button>
 
       <div
         className="container-pages"
@@ -74,6 +74,7 @@ const Slider = () => {
 
         <FlippingPages
           direction="right-to-left"
+          animationDuration={800}
           onSwipeEnd={setSelected}
           selected={selected}
         >

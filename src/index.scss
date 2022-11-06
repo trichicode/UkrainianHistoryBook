@@ -16,7 +16,9 @@
 }
 
 @font-face {
-    font-family: "e-Ukraine-medium";
+    font-family: "e-Ukraine Medium";
+    font-style: normal;
+    font-weight: normal;
     src: url("./../public/assets/fonts/e-Ukraine-Medium.otf") format("opentype");
 }
 
@@ -31,9 +33,16 @@
 }
 
 html {
-  background-color: $darkGray;
-  scroll-behavior: smooth;
-  font-family: "e-Ukraine-regular";
+    background: $darkGray;
+    scroll-behavior: smooth;
+    font-family: "e-Ukraine-regular";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+//    overflow: hidden;
 }
 
 button,
