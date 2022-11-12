@@ -1,0 +1,39 @@
+@import "../../../constants/colors.scss";
+
+.wrapper__page {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  user-select: none;
+}
+
+.wrapper__img {
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: 50% 30%;
+
+    overflow: hidden;
+  }
+}
+
+.wrapper__content {
+  position: absolute;
+  bottom: 100px;
+  background-color: $lightGray;
+}

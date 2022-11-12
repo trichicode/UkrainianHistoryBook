@@ -1,0 +1,93 @@
+@import "../../constants/colors.scss";
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+
+    overflow-y: hidden;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    user-select: none;
+}
+
+.image-container {
+    position: absolute;
+
+    z-index: 10;
+
+    overflow-y: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.image {
+    width: 100vw;
+    height: 100vh;
+    opacity: 5%;
+    
+    object-fit: cover;
+}
+
+.container {
+    position: absolute;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    h1 {
+        font-family: "e-Ukraine";
+        font-weight: 500;
+        font-size: 4em;
+        color: whitesmoke;
+
+        width: min-content;
+    }
+}
+
+.desc-container {
+    position: absolute;
+    z-index: 1000;
+
+    bottom: 7vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: "e-Ukraine";
+        font-weight: 500;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    img {
+        cursor: pointer;
+        margin-top: 20px;
+        animation: zoom-in 1s ease infinite;
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}

@@ -1,8 +1,15 @@
 .App {
   text-align: center;
-  height: calc(100vh - 20px);
+  height: 100vh;
+  width: 100vw;
 
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.swiper {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
 }
