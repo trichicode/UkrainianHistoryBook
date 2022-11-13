@@ -1,16 +1,18 @@
 import {useEffect, useState, useContext} from "react";
-import Page from "./page/Page";
+import Page from "./pages/ImagePage";
 import { useSwiper } from 'swiper/react';
-import "./Book.scss";
+import "./ImageBook.scss";
 
 import { FlippingPages } from "flipping-pages";
 import "flipping-pages/dist/style.css";
 
 import { BOOK_DATA } from "../../constants/bookData";
 import { BookContext } from "../../context/bookContext";
+import Timeline from "./Timeline";
 
-const Book = () => {
-  const { isPrevAvailable, isNextAvailable, setIsFocus, setIsPrevAvailable, setIsNextAvailable } = useContext(BookContext);
+const ImageBook = () => {
+  const { isFocus, isPrevAvailable, isNextAvailable, setIsFocus, setIsPrevAvailable, setIsNextAvailable } = useContext(BookContext);
+  const swiper = useSwiper();
 
   const [selected, setSelected] = useState(0);
 
@@ -36,6 +38,14 @@ const Book = () => {
     }
   }, [selected]);
 
+  useEffect(() => {
+    if ( swiper && swiper.mousewheel && swiper.activeIndex === 1 && isFocus ) {
+      swiper.disable();
+    } else if ( swiper && swiper.mousewheel && swiper.activeIndex === 1 ) {
+      swiper.enable();
+    }
+  });
+
   return (
     <div className="wrapper-pages">
 
@@ -54,11 +64,13 @@ const Book = () => {
         className="container-pages"
         onMouseEnter={() => setIsFocus(true) }
         onMouseLeave={() => setIsFocus(false) }
+
         onWheel={(e) => {
           e.deltaY > 0 ? next() : prev();
         }}
       >
-         <FlippingPages
+        <Timeline />
+        <FlippingPages
           direction="right-to-left"
           animationDuration={800}
           onSwipeEnd={setSelected}
@@ -87,4 +99,4 @@ const Book = () => {
   );
 };
 
-export default Book;
+export default ImageBook;

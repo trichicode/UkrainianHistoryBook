@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { slideData } from '../../../types/book';
-import './Page.scss';
+import './ImagePage.scss';
 
-const Page: FC<{ data: slideData }> = ({ data }) => {
+const ImagePage: FC<{ data: slideData }> = ({ data }) => {
   return (
     <div className="wrapper__page">
       <div className="wrapper__img">
@@ -17,4 +17,4 @@ const Page: FC<{ data: slideData }> = ({ data }) => {
   );
 };
 
-export default Page;
+export default ImagePage;
