@@ -60,30 +60,32 @@ const ImageBook = () => {
         />
       </button>
 
-      <div
-        className="container-pages"
-        onMouseEnter={() => setIsFocus(true) }
-        onMouseLeave={() => setIsFocus(false) }
+      <div className="container-wrapper-pages">
+        <div
+          className="container-pages"
+          onMouseEnter={() => setIsFocus(true) }
+          onMouseLeave={() => setIsFocus(false) }
 
-        onWheel={(e) => {
-          e.deltaY > 0 ? next() : prev();
-        }}
-      >
-        <Timeline />
-        <FlippingPages
-          direction="right-to-left"
-          animationDuration={800}
-          onSwipeEnd={setSelected}
-          selected={selected}
+          onWheel={(e) => {
+            e.deltaY > 0 ? next() : prev();
+          }}
         >
-          {BOOK_DATA.map((content, index) => (
-            <ImagePage
-              key={index}
-              data={content}
-            />
-          ))}
-        </FlippingPages>
+          <Timeline />
+          <FlippingPages
+            direction="right-to-left"
+            animationDuration={800}
+            onSwipeEnd={setSelected}
+            selected={selected}
+          >
+            {BOOK_DATA.map((content, index) => (
+              <ImagePage
+                key={index}
+                data={content}
+              />
+            ))}
+          </FlippingPages>
 
+        </div>
       </div>
 
       <button onClick={next}>

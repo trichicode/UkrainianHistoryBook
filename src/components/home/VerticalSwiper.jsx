@@ -23,9 +23,6 @@ const VerticalSwiper = () => {
       <SwiperSlide>
         <DescriptionBook />
       </SwiperSlide>
-      <SwiperSlide>
-        <Intro />
-      </SwiperSlide>
     </Swiper>
   )
 }
