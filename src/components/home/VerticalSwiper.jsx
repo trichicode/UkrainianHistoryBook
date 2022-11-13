@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel } from 'swiper';
 import Intro from "../intro";
 import ImageBook from "../book/ImageBook";
+import DescriptionBook from "../book/DescriptionBook";
 
 const VerticalSwiper = () => {
   return (
@@ -18,6 +19,9 @@ const VerticalSwiper = () => {
       </SwiperSlide>
       <SwiperSlide>
         <ImageBook />
+      </SwiperSlide>
+      <SwiperSlide>
+        <DescriptionBook />
       </SwiperSlide>
       <SwiperSlide>
         <Intro />

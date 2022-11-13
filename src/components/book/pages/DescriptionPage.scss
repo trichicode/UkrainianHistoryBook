@@ -1,0 +1,44 @@
+@import "../../../constants/colors.scss";
+
+.wrapper__page__descr {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  background: rgba(53, 53, 53, 0.3);
+  border-radius: 31px;
+
+  position: relative;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  user-select: none;
+}
+
+.wrapper__title__descr {
+  padding: 62px 75px 0px 75px;
+  font-family: 'e-Ukraine';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+
+  color: #F2F2F2;
+  text-align: left;
+}
+
+.wrapper__content__descr {
+  padding: 35px 75px;
+
+  font-family: 'e-Ukraine';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+
+  color: #F2F2F2;
+  text-align: left;
+}
