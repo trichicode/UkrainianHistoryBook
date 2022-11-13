@@ -1,5 +1,5 @@
 import {useEffect, useState, useContext} from "react";
-import Page from "./pages/ImagePage";
+import ImagePage from "./pages/ImagePage";
 import { useSwiper } from 'swiper/react';
 import "./ImageBook.scss";
 
@@ -77,7 +77,7 @@ const ImageBook = () => {
           selected={selected}
         >
           {BOOK_DATA.map((content, index) => (
-            <Page
+            <ImagePage
               key={index}
               data={content}
             />
