@@ -23,10 +23,10 @@ const App = () => {
         setIsPrevAvailable,
         setIsNextAvailable,
       }}>
-      <div className="App">
-        <VerticalSwiper />
-        <Settings />
-      </div>
+          <div className="App">
+            <VerticalSwiper />
+            <Settings />
+          </div>
     </BookContext.Provider>
   );
 };

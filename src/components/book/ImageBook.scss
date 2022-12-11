@@ -2,7 +2,7 @@
 
 .wrapper-pages {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@
     width: 60px;
     border-radius: 10px;
     color: white;
-    
+
     cursor: pointer;
 
     display: flex;
@@ -35,7 +35,9 @@
 }
 
 .container-wrapper-pages {
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-pages {
