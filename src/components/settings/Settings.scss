@@ -1,0 +1,144 @@
+@import "../../constants/colors.scss";
+
+.playButton {
+  background: $lightGray;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingsButton {
+  position: absolute;
+  z-index: 10000;
+  left: 30px;
+  top: 30px;
+
+  background: $lightGray;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.muteButton {
+  background: $lightGray;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playButton {
+  background: $lightGray;
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingsPanel {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: $darkGray;
+  display: flex;
+
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+
+  animation: slide-in 0.5s forwards;
+}
+
+.backPanel {
+  position: absolute;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+
+  opacity: 25%;
+  background-color: black;
+}
+
+.audioControls-wrapper {
+  margin: 160px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 30px;
+}
+
+.audioControls-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+
+.companyName {
+  font-family: 'e-Ukraine';
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}

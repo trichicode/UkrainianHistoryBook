@@ -7,6 +7,7 @@ import DescriptionBook from "../book/DescriptionBook";
 const VerticalSwiper = () => {
   return (
     <Swiper
+      id="app-contains"
       modules={[Mousewheel]}
       mousewheel={true}
       spaceBetween={50}
