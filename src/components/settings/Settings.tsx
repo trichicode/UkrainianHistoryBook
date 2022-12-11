@@ -56,9 +56,11 @@ const Settings = () => {
 const SettingsPanel:FC<{isPanelOpen: boolean, closePanel: () => void}> = ({isPanelOpen, closePanel}) => {
     const audioPlayer = useRef<HTMLAudioElement>(null);
 
+    const [isFirstPlay, setIsFirstPlay] = useState<boolean>(true);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
     const [isMuted, setIsMuted] = useState<boolean>(true);
     const [volume, setVolume] = useState<number>(0);
+    const [lastVolume, setLastVolume] = useState<number>(0);
 
     useEffect(() => {
         const audio = audioPlayer.current;
@@ -92,7 +94,10 @@ const SettingsPanel:FC<{isPanelOpen: boolean, closePanel: () => void}> = ({isPan
                                     audio.play()
                                         .then(() => {
                                             setIsPlaying(true);
-                                            setVolume(10);
+                                            if ( isFirstPlay && volume === 0 ) {
+                                                setVolume(10 );
+                                                setIsFirstPlay(false);
+                                            }
                                             setIsMuted(false);
                                             audio.volume = volume / 100;
                                         })
@@ -101,7 +106,6 @@ const SettingsPanel:FC<{isPanelOpen: boolean, closePanel: () => void}> = ({isPan
                                     audio.pause();
                                     setIsPlaying(false);
                                 }
-
                             }
                         }}>
                             <img
@@ -113,37 +117,39 @@ const SettingsPanel:FC<{isPanelOpen: boolean, closePanel: () => void}> = ({isPan
                         </button>
 
                         <div className="audioControls-container" >
-                        <button className="muteButton" onClick={() => {
-                            setVolume(0);
-                            setIsMuted(!isMuted);
+                            <button className="muteButton" onClick={() => {
+                                if ( !isMuted ) {
+                                    setLastVolume(volume);
+                                    setVolume(0);
+                                    setIsMuted(true);
+                                } else {
+                                    setVolume(lastVolume);
+                                    setIsMuted(false);
+                                }
+                            }}>
+                                <img
+                                    width={27}
+                                    height={25}
+                                    src={isMuted ? "./assets/imgs/mute.svg" : "./assets/imgs/unmute.svg"}
+                                    alt="back-arrow"
+                                />
+                            </button>
 
-                            if ( !isMuted ) {
-                                setVolume(10);
-                            }
-                        }}>
-                            <img
-                                width={27}
-                                height={25}
-                                src={isMuted ? "./assets/imgs/mute.svg" : "./assets/imgs/unmute.svg"}
-                                alt="back-arrow"
-                            />
-                        </button>
-
-                        <div style={{width: "calc(100% - 100px)", marginLeft: 30}}>
-                            <VolumeSlider
-                                value={volume}
-                                min={0}
-                                max={100}
-                                onChange={(e: any) => {
-                                    const volume = (e.target as any).value;
-                                    setVolume(volume === 0 ? 0 : volume);
-                                    setIsMuted(volume === 0);
-                                }}
-                                step={1}
-                                valueLabelDisplay="on"
-                            />
+                            <div style={{width: "calc(100% - 100px)", marginLeft: 30}}>
+                                <VolumeSlider
+                                    value={volume}
+                                    min={0}
+                                    max={100}
+                                    onChange={(e: any) => {
+                                        const volume = (e.target as any).value;
+                                        setVolume(volume === 0 ? 0 : volume);
+                                        setIsMuted(volume === 0);
+                                    }}
+                                    step={1}
+                                    valueLabelDisplay="on"
+                                />
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                     <h1 className="companyName"> • HighTechCode LLC </h1>
