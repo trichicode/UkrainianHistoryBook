@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import './App.scss';
 
 import VerticalSwiper from './components/home/VerticalSwiper';
 import Settings from "./components/settings/Settings";
 import { BookContext } from './context/bookContext';
+import Timeline from "./components/book/Timeline";
 
 const App = () => {
   const [isFocus, setIsFocus] = useState(false);

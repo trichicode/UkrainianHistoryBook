@@ -8,7 +8,6 @@ import 'flipping-pages/dist/style.css';
 
 import { BOOK_DATA } from '../../constants/bookData';
 import { BookContext } from '../../context/bookContext';
-import Timeline from './Timeline';
 
 const ImageBook = () => {
   const {
@@ -25,10 +24,28 @@ const ImageBook = () => {
 
   const prev = () => {
     setCurrentPage(Math.max(currentPage - 1, 0));
+
+    // setTimeout(() => {
+    //   handleDown();
+    //   // return handleUp();
+    // }, 800)
   };
 
   const next = () => {
     setCurrentPage(Math.min(currentPage + 1, BOOK_DATA.length - 1));
+
+    // setTimeout(() => {
+    //   handleDown();
+    //   // return handleUp();
+    // }, 800)
+  };
+
+  const handleDown = () => {
+    document.getElementById('timeline-element').style.zIndex = -1;
+  };
+
+  const handleUp = () => {
+    document.getElementById('timeline-element').style.zIndex = 1;
   };
 
   useEffect(() => {
@@ -73,11 +90,17 @@ const ImageBook = () => {
               onMouseLeave={() => setIsFocus(false)}
               onWheel={(e) => {
                 e.deltaY > 0 ? next() : prev();
-              }}>
-            <Timeline />
+              }}
+
+              onMouseDown={handleDown}
+              onMouseUp={handleUp}
+          >
             <FlippingPages
                 direction="right-to-left"
                 animationDuration={800}
+                shadowBackground="transparent"
+                onAnimationStart={handleDown}
+                onAnimationEnd={handleUp}
                 onSwipeEnd={setCurrentPage}
                 selected={currentPage}>
               {BOOK_DATA.map((content, index) => (

@@ -74,7 +74,6 @@ const DescriptionBook = () => {
               onWheel={(e) => {
                 e.deltaY > 0 ? next() : prev();
               }}>
-            <Timeline />
             <FlippingPages
                 direction="right-to-left"
                 animationDuration={800}
