@@ -22,7 +22,7 @@ const Intro = () => {
         </div>
         <div className="desc-container">
           <h1>
-          • the book was created by amateurs and does not position itself as a 100% source of
+          • the book was created by volontiers and does not position itself as a 100% source of
             information
           </h1>
           <img width={25} height={20} src="./assets/imgs/scroll.svg" onClick={clickHandler}/>
