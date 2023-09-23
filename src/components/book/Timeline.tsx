@@ -4,18 +4,12 @@ import './Timeline.scss';
 import { TimelineSlider } from "../slider/CustomSlider";
 import {BookContext} from "../../context/bookContext";
 import {BOOK_DATA} from "../../constants/bookData";
-import {useSwiper} from "swiper/react";
 
 const Timeline = () => {
     const {
         currentPage,
         setCurrentPage
     } = useContext(BookContext);
-    const swiper = useSwiper();
-
-    useEffect(() => {
-        console.log(swiper);
-    }, [swiper])
 
     const currentYear = new Date().getFullYear();
 
