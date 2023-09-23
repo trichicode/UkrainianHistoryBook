@@ -1,27 +1,48 @@
 @import "./constants/colors.scss";
 
-@import url(//db.onlinewebfonts.com/c/a44207bfe4040f536c824dbbf82f5ed1?family=e-Ukraine);
+@font-face {
+    font-family: "e-Ukraine-ultra-light";
+    src: url("./fonts/e-Ukraine-UltraLight.otf") format("opentype");
+}
 
 @font-face {
-    font-family: "e-Ukraine";
-    src: url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.eot");
-    src: url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.eot?#iefix") format("embedded-opentype"),
-         url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.woff2") format("woff2"),
-         url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.woff") format("woff"),
-         url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.ttf") format("truetype"),
-         url("//db.onlinewebfonts.com/t/a44207bfe4040f536c824dbbf82f5ed1.svg#e-Ukraine") format("svg");
+    font-family: "e-Ukraine-thin";
+    src: url("./fonts/e-Ukraine-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-regular";
+    src: url("./fonts/e-Ukraine-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./fonts/e-Ukraine-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-light";
+    src: url("./fonts/e-Ukraine-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "e-Ukraine-bold";
+    src: url("./fonts/e-Ukraine-Bold.otf") format("opentype");
 }
 
 html {
     background: $darkGray;
     scroll-behavior: smooth;
+    font-family: "e-Ukraine-regular";
 }
 
 body {
     margin: 0;
     padding: 0;
+
     overflow: hidden;
-    font-family: "e-Ukraine-regular";
 }
 
 button,
